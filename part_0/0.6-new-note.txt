@@ -1,0 +1,12 @@
+title 0.6-new-note
+
+
+note over Browser:
+Browser executes the event handler that renders the new note and send it to the server.
+end note
+Browser->Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa (contains new note as JSON data)
+Server-->Browser: HTTP STATUS CODE 201 created
+
+
+
+

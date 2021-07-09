@@ -1,0 +1,20 @@
+title 0.5-single-page-app
+
+Browser->Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/spa
+note right of Server: Status Code 304
+Server->Browser: Return HTML-code
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa/spa.js
+note right of Server: Status Code 304
+Server->Browser: Return spa.js
+note over Browser:
+Browser starts executing js-code that request JSON data from server.
+end note
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+note right of Server: Status Code 200
+Server-->Browser: Return JSON data
+note over Browser:
+Browser executes the event handler that renders the notes to display.
+end note
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/favicon.ico
+note right of Server: Status Code 200
+Server-->Browser: Return favicon 
